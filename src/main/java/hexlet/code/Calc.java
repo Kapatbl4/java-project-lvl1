@@ -1,2 +1,4 @@
-package hexlet.code;public class Calc {
+package hexlet.code;
+
+public class Calc {
 }
