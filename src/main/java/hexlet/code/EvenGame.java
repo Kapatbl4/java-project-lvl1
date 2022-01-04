@@ -14,6 +14,6 @@ public class EvenGame extends Engine {
     }
 
     public String makeCorrectAnswer() {
-        return (isEven(Integer.parseInt(question))) ? "yes" : "no";
+        return (isEven(Integer.parseInt(getQuestion()))) ? "yes" : "no";
     }
 }

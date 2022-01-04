@@ -7,7 +7,7 @@ public class Calc extends Engine{
 
     @Override
     public String makeCorrectAnswer() {
-        String[] strings = question.split(" ");
+        String[] strings = getQuestion().split(" ");
         int result;
         int first = Integer.parseInt(strings[0]);
         int second = Integer.parseInt(strings[2]);
