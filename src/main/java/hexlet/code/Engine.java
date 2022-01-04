@@ -41,4 +41,11 @@ public class Engine {
     public String makeQuestion() {
         return "";
     }
+
+    public int makeNumber() {
+        final int ten = 10;
+        int a = (int) (Math.random() * ten);
+        int b = (int) (Math.random() * ten);
+        return a * b;
+    }
 }
