@@ -18,7 +18,8 @@ public class App {
                 break;
 
             case (2) :
-                EvenGame.playEvenGame();
+                EvenGame evenGame = new EvenGame();
+                evenGame.playEvenGame();
                 break;
 
             default:
