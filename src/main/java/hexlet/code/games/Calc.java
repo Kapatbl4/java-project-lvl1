@@ -4,6 +4,7 @@ import hexlet.code.Engine;
 
 public class Calc extends Engine {
     public void calcGame() {
+        setInstruction("What is the result of the expression?");
         playGame();
     }
 

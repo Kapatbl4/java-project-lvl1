@@ -5,6 +5,7 @@ import hexlet.code.Engine;
 
 public class EvenGame extends Engine {
     public void playEvenGame() {
+        setInstruction("Answer 'yes' if number even otherwise answer 'no'.");
         playGame();
     }
     public boolean isEven(int number) {

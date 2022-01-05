@@ -4,12 +4,14 @@ import java.util.Scanner;
 
 public class Engine {
     private String question;
-    public String correctAnswer;
+    private String correctAnswer;
+    private String instruction;
     public final String greeting = "Welcome to the Brain Games!";
     public String answer;
     public void playGame() {
         System.out.println(greeting);
         Cli.askName();
+        System.out.println(getInstruction());
         int trueAnswersCount = 0;
         final int win = 3;
         while (trueAnswersCount < win) {
@@ -53,6 +55,22 @@ public class Engine {
     }
 
     public String getQuestion() {
-        return this.question;
+        return question;
+    }
+
+    public void setInstruction(String instruction) {
+        this.instruction = instruction;
+    }
+
+    public String getInstruction() {
+        return instruction;
+    }
+
+    public void setCorrectAnswer(String correctAnswer) {
+        this.correctAnswer = correctAnswer;
+    }
+
+    public String getCorrectAnswer() {
+        return correctAnswer;
     }
 }

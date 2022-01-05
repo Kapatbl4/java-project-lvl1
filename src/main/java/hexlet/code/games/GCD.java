@@ -4,6 +4,7 @@ import hexlet.code.Engine;
 
 public class GCD extends Engine {
     public void gcdGame() {
+        setInstruction("Find the greatest common divisor of given numbers.");
         playGame();
     }
 
