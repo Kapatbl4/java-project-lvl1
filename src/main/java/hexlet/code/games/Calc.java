@@ -1,6 +1,8 @@
-package hexlet.code;
+package hexlet.code.games;
 
-public class Calc extends Engine{
+import hexlet.code.Engine;
+
+public class Calc extends Engine {
     public void calcGame() {
         playGame();
     }
