@@ -1,9 +1,6 @@
 package hexlet.code;
 
-import hexlet.code.games.Calc;
-import hexlet.code.games.EvenGame;
-import hexlet.code.games.GCD;
-import hexlet.code.games.Progression;
+import hexlet.code.games.*;
 
 import java.util.Scanner;
 
@@ -15,10 +12,12 @@ public class App {
         System.out.println("3 - Calc");
         System.out.println("4 - GCD");
         System.out.println("5 - Progression");
+        System.out.println("6 - Prime");
         System.out.println("0 - Exit");
         System.out.print("Your choice: ");
         Scanner scanner = new Scanner(System.in);
         int choice = scanner.nextInt();
+        System.out.println(choice);
         switch (choice) {
             case (1) :
                 System.out.println("Welcome to the Brain Games!");
@@ -43,6 +42,11 @@ public class App {
             case (5) :
                 Progression progression = new Progression();
                 progression.playProgression();
+                break;
+
+            case (6) :
+                Prime prime = new Prime();
+                prime.playPrime();
                 break;
 
             default:
