@@ -1,7 +1,7 @@
 install: # install
 	./gradlew clean install
 run-dist: # run
-	./build/install/app/bin/app
+	build/install/app/bin/app
 check-updates: #check updates
 	./gradlew dependencyUpdates
 lint: #checkstyle
