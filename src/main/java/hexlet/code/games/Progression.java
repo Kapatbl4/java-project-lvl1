@@ -47,14 +47,14 @@ public class Progression {
             hiddenNumberPosition--;
         }
         StringBuilder sb = new StringBuilder();
-
+        if (hiddenNumberPosition == 0) {
+            sb.append("..");
+        } else {
+            sb.append(numbers[0]);
+        }
         for (int i = 1; i < numbers.length; i++) {
             if (i == hiddenNumberPosition) {
-                if (sb.length() == 0) {
-                    sb.append("..");
-                } else {
-                    sb.append(" ..");
-                }
+                sb.append(" ..");
                 continue;
             }
             sb.append(" ").append(numbers[i]);
