@@ -7,25 +7,17 @@ public class Progression {
 
     public static void playProgression() {
         Engine.setInstruction("What number is missing in the progression?");
+        String[] questionsAndAnswers = new String[Engine.QUESTIONS_AND_ANSWERS_COUNT];
+        final int cycleStep = 2;
+        for (int i = 0; i < questionsAndAnswers.length; i += cycleStep) {
+            questionsAndAnswers[i] = makeQuestion();
+            questionsAndAnswers[i + 1] = getCorrectAnswer();
+        }
 
-        Engine.setFirstQuestion(makeQuestion());
-        Engine.setFirstCorrectAnswer(getCorrectAnswer());
-
-        Engine.setSecondQuestion(makeQuestion());
-        Engine.setSecondCorrectAnswer(getCorrectAnswer());
-
-        Engine.setThirdQuestion(makeQuestion());
-        Engine.setThirdCorrectAnswer(getCorrectAnswer());
-
-        Engine.playGame();
+        Engine.playGame(questionsAndAnswers);
     }
 
-//    @Override
-//    public String makeCorrectAnswer() {
-//        return getCorrectAnswer();
-//    }
-//
-//    @Override
+
     public static String makeQuestion() {
         int beginning = Engine.makeNumber();
         final int minLength = 5;

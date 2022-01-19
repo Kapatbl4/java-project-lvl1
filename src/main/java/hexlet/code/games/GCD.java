@@ -5,17 +5,14 @@ import hexlet.code.Engine;
 public class GCD {
     public static void gcdGame() {
         Engine.setInstruction("Find the greatest common divisor of given numbers.");
+        String[] questionsAndAnswers = new String[Engine.QUESTIONS_AND_ANSWERS_COUNT];
+        final int cycleStep = 2;
+        for (int i = 0; i < questionsAndAnswers.length; i += cycleStep) {
+            questionsAndAnswers[i] = makeQuestion();
+            questionsAndAnswers[i + 1] = makeCorrectAnswer(questionsAndAnswers[i]);
+        }
 
-        Engine.setFirstQuestion(makeQuestion());
-        Engine.setFirstCorrectAnswer(makeCorrectAnswer(Engine.getFirstQuestion()));
-
-        Engine.setSecondQuestion(makeQuestion());
-        Engine.setSecondCorrectAnswer(makeCorrectAnswer(Engine.getSecondQuestion()));
-
-        Engine.setThirdQuestion(makeQuestion());
-        Engine.setThirdCorrectAnswer(makeCorrectAnswer(Engine.getThirdQuestion()));
-
-        Engine.playGame();
+        Engine.playGame(questionsAndAnswers);
     }
     public static String makeCorrectAnswer(String answer) {
         String[] numbers = answer.split(" ");

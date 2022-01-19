@@ -5,19 +5,16 @@ import hexlet.code.Engine;
 public class Calc {
     public static void playCalcGame() {
         Engine.setInstruction("What is the result of the expression?");
+        String[] questionsAndAnswers = new String[Engine.QUESTIONS_AND_ANSWERS_COUNT];
+        final int cycleStep = 2;
+        for (int i = 0; i < questionsAndAnswers.length; i += cycleStep) {
+            questionsAndAnswers[i] = makeQuestion();
+            questionsAndAnswers[i + 1] = makeCorrectAnswer(questionsAndAnswers[i]);
+        }
 
-        Engine.setFirstQuestion(makeQuestion());
-        Engine.setFirstCorrectAnswer(makeCorrectAnswer(Engine.getFirstQuestion()));
-
-        Engine.setSecondQuestion(makeQuestion());
-        Engine.setSecondCorrectAnswer(makeCorrectAnswer(Engine.getSecondQuestion()));
-
-        Engine.setThirdQuestion(makeQuestion());
-        Engine.setThirdCorrectAnswer(makeCorrectAnswer(Engine.getThirdQuestion()));
-
-        Engine.playGame();
+        Engine.playGame(questionsAndAnswers);
     }
-//    @Override
+
     public static String makeCorrectAnswer(String answer) {
         String[] strings = answer.split(" ");
         int result;
@@ -34,7 +31,7 @@ public class Calc {
         }
         return String.valueOf(result);
     }
-//    @Override
+
     public static String makeQuestion() {
         final int plus = 10;
         final int minus = 20;

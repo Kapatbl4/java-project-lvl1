@@ -7,20 +7,16 @@ public class Prime {
     private static int question;
     public static void playPrime() {
         Engine.setInstruction("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+        String[] questionsAndAnswers = new String[Engine.QUESTIONS_AND_ANSWERS_COUNT];
+        final int cycleStep = 2;
+        for (int i = 0; i < questionsAndAnswers.length; i += cycleStep) {
+            questionsAndAnswers[i] = makeQuestion();
+            questionsAndAnswers[i + 1] = makeCorrectAnswer();
+        }
 
-        Engine.setFirstQuestion(makeQuestion());
-        Engine.setFirstCorrectAnswer(makeCorrectAnswer());
-
-        Engine.setSecondQuestion(makeQuestion());
-        Engine.setSecondCorrectAnswer(makeCorrectAnswer());
-
-        Engine.setThirdQuestion(makeQuestion());
-        Engine.setThirdCorrectAnswer(makeCorrectAnswer());
-
-        Engine.playGame();
+        Engine.playGame(questionsAndAnswers);
     }
-//
-//    @Override
+
     public static String makeCorrectAnswer() {
         int q = getQuestion();
         final int firstNotPrimeNumber = 4;
@@ -54,6 +50,5 @@ public class Prime {
     public static void setQuestion(int q) {
         Prime.question = q;
     }
-//
-//    @Override
+
 }
