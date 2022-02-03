@@ -6,7 +6,6 @@ public class Progression {
     private static String correctAnswer;
 
     public static void playProgression() {
-        Engine.setInstruction("What number is missing in the progression?");
         String[] questionsAndAnswers = new String[Engine.QUESTIONS_AND_ANSWERS_COUNT];
         final int cycleStep = 2;
         for (int i = 0; i < questionsAndAnswers.length; i += cycleStep) {
@@ -14,7 +13,7 @@ public class Progression {
             questionsAndAnswers[i + 1] = getCorrectAnswer();
         }
 
-        Engine.playGame(questionsAndAnswers);
+        Engine.playGame(questionsAndAnswers, "What number is missing in the progression?");
     }
 
 

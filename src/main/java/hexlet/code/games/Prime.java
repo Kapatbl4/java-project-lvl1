@@ -6,7 +6,6 @@ import hexlet.code.Engine;
 public class Prime {
     private static int question;
     public static void playPrime() {
-        Engine.setInstruction("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         String[] questionsAndAnswers = new String[Engine.QUESTIONS_AND_ANSWERS_COUNT];
         final int cycleStep = 2;
         for (int i = 0; i < questionsAndAnswers.length; i += cycleStep) {
@@ -14,7 +13,7 @@ public class Prime {
             questionsAndAnswers[i + 1] = makeCorrectAnswer();
         }
 
-        Engine.playGame(questionsAndAnswers);
+        Engine.playGame(questionsAndAnswers, "Answer 'yes' if given number is prime. Otherwise answer 'no'.");
     }
 
     public static String makeCorrectAnswer() {
