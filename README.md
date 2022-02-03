@@ -1,6 +1,7 @@
 ### Hexlet tests and linter status:
 ![Actions Status](https://github.com/Kapatbl4/java-project-lvl1/workflows/hexlet-check/badge.svg)
-###Codeclimate maintainabilitybadge:
+
+### Codeclimate maintainabilitybadge:
 <a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
 
 ![ProgressionGame](https://user-images.githubusercontent.com/90971956/149149505-367d57df-2fc2-48ae-8285-2dcf4667325d.png)
