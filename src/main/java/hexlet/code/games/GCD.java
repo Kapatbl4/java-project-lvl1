@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class GCD {
     public static void gcdGame() {
@@ -25,8 +26,8 @@ public class GCD {
         return String.valueOf(number1);
     }
     public static String makeQuestion() {
-        int num1 = Engine.makeNumber();
-        int num2 = Engine.makeNumber();
+        int num1 = Utils.makeNumber();
+        int num2 = Utils.makeNumber();
         if (num1 == 0) {
             num1 = 1;
         }

@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class Progression {
     private static String correctAnswer;
@@ -18,12 +19,12 @@ public class Progression {
 
 
     public static String makeQuestion() {
-        int beginning = Engine.makeNumber();
+        int beginning = Utils.makeNumber();
         final int minLength = 5;
         final int maxLength = 15;
         final int midLength = 10;
         final int tenForRandom = 10;
-        int sequenceLength = Engine.makeNumber();
+        int sequenceLength = Utils.makeNumber();
         if (sequenceLength < minLength || sequenceLength > maxLength) {
             sequenceLength = midLength;
         }

@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class Calc {
     public static void playCalcGame() {
@@ -35,7 +36,7 @@ public class Calc {
         final int plus = 10;
         final int minus = 20;
         char sign;
-        int i = Engine.makeNumber();
+        int i = Utils.makeNumber();
         if (i < plus) {
             sign = '+';
         } else if (i < minus) {
@@ -44,8 +45,8 @@ public class Calc {
             sign = '*';
         }
 
-        int first = Engine.makeNumber();
-        int second = Engine.makeNumber();
+        int first = Utils.makeNumber();
+        int second = Utils.makeNumber();
 
         return first + " " + sign + " " + second;
     }

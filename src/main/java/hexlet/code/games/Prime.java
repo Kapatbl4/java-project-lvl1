@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 
 public class Prime {
@@ -37,7 +38,7 @@ public class Prime {
     }
 
     public static String makeQuestion() {
-        int result = Engine.makeNumber();
+        int result = Utils.makeNumber();
         setQuestion(result);
         return String.valueOf(result);
     }
