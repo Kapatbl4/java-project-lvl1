@@ -3,7 +3,6 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
-    private static String answer;
     public static final int QUESTIONS_AND_ANSWERS_COUNT = 6;
 
     public static int makeNumber() {
@@ -13,19 +12,12 @@ public class Engine {
         return a * b;
     }
 
-    public static void setAnswer(String a) {
-        Engine.answer = a;
-    }
-
-    public static String getAnswer() {
-        return answer;
-    }
-
     public static void greeting() {
         System.out.println("Welcome to the Brain Games!");
     }
 
     public static void playGame(String[] questionsAndAnswers, String instruction) {
+        String answer;
         greeting();
         Cli.askName();
         System.out.println(instruction);
@@ -37,14 +29,14 @@ public class Engine {
             System.out.println("Question: " + questionsAndAnswers[i]);
             System.out.println("Your answer: ");
             Scanner scanner = new Scanner(System.in);
-            setAnswer(scanner.nextLine());
-            if (getAnswer().equals(questionsAndAnswers[aIndex])) {
+            answer = scanner.nextLine();
+            if (answer.equals(questionsAndAnswers[aIndex])) {
                 System.out.println("Correct!");
                 aIndex += step;
                 trueAnswersCount++;
             } else {
                 System.out.println("'"
-                        + getAnswer()
+                        + answer
                         + "' is wrong answer;(. Correct answer was '"
                         + questionsAndAnswers[aIndex]
                         + "'.\n"
