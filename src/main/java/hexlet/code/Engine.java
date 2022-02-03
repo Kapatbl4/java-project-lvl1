@@ -3,9 +3,9 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
-    public static final int QUESTIONS_AND_ANSWERS_COUNT = 6;
+    public static final int ROUND_COUNT = 3;
 
-    public static void playGame(String[] questionsAndAnswers, String instruction) {
+    public static void playGame(String[][] questionsAndAnswers, String instruction) {
         String answer;
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
@@ -14,21 +14,19 @@ public class Engine {
         System.out.println();
         System.out.println("Hello, " + userName + "!");
         System.out.println(instruction);
-        int aIndex = 1;
-        final int step = 2;
-        for (int i = 0; i < questionsAndAnswers.length; i += step) {
-            System.out.println("Question: " + questionsAndAnswers[i]);
+
+        for (int i = 0; i < questionsAndAnswers.length; i++) {
+            System.out.println("Question: " + questionsAndAnswers[i][0]);
             System.out.println("Your answer: ");
             Scanner scanner1 = new Scanner(System.in);
             answer = scanner1.nextLine();
-            if (answer.equals(questionsAndAnswers[aIndex])) {
+            if (answer.equals(questionsAndAnswers[i][1])) {
                 System.out.println("Correct!");
-                aIndex += step;
             } else {
                 System.out.println("'"
                         + answer
                         + "' is wrong answer;(. Correct answer was '"
-                        + questionsAndAnswers[aIndex]
+                        + questionsAndAnswers[i][1]
                         + "'.\n"
                         + "Let's try again, "
                         + userName

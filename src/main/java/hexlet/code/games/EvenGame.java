@@ -6,12 +6,11 @@ import hexlet.code.Utils;
 
 public class EvenGame {
     public static void playEvenGame() {
-        String[] questionsAndAnswers = new String[Engine.QUESTIONS_AND_ANSWERS_COUNT];
-        final int cycleStep = 2;
-        for (int i = 0; i < questionsAndAnswers.length; i += cycleStep) {
+        String[][] questionsAndAnswers = new String[Engine.ROUND_COUNT][2];
+        for (int i = 0; i < questionsAndAnswers.length; i++) {
             int question = Utils.makeNumber();
-            questionsAndAnswers[i] = String.valueOf(question);
-            questionsAndAnswers[i + 1] = (isEven(question) ? "yes" : "no");
+            questionsAndAnswers[i][0] = String.valueOf(question);
+            questionsAndAnswers[i][1] = (isEven(question) ? "yes" : "no");
         }
 
         Engine.playGame(questionsAndAnswers, "Answer 'yes' if number even otherwise answer 'no'.");

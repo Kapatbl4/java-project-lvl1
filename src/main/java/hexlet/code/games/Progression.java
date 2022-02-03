@@ -7,11 +7,10 @@ public class Progression {
     private static String correctAnswer;
 
     public static void playProgression() {
-        String[] questionsAndAnswers = new String[Engine.QUESTIONS_AND_ANSWERS_COUNT];
-        final int cycleStep = 2;
-        for (int i = 0; i < questionsAndAnswers.length; i += cycleStep) {
-            questionsAndAnswers[i] = makeQuestion();
-            questionsAndAnswers[i + 1] = getCorrectAnswer();
+        String[][] questionsAndAnswers = new String[Engine.ROUND_COUNT][2];
+        for (int i = 0; i < questionsAndAnswers.length; i++) {
+            questionsAndAnswers[i][0] = makeQuestion();
+            questionsAndAnswers[i][1] = getCorrectAnswer();
         }
 
         Engine.playGame(questionsAndAnswers, "What number is missing in the progression?");

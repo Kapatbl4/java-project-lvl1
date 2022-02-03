@@ -7,11 +7,10 @@ import hexlet.code.Utils;
 public class Prime {
     private static int question;
     public static void playPrime() {
-        String[] questionsAndAnswers = new String[Engine.QUESTIONS_AND_ANSWERS_COUNT];
-        final int cycleStep = 2;
-        for (int i = 0; i < questionsAndAnswers.length; i += cycleStep) {
-            questionsAndAnswers[i] = makeQuestion();
-            questionsAndAnswers[i + 1] = makeCorrectAnswer();
+        String[][] questionsAndAnswers = new String[Engine.ROUND_COUNT][2];
+        for (int i = 0; i < questionsAndAnswers.length; i++) {
+            questionsAndAnswers[i][0] = makeQuestion();
+            questionsAndAnswers[i][1] = makeCorrectAnswer();
         }
 
         Engine.playGame(questionsAndAnswers, "Answer 'yes' if given number is prime. Otherwise answer 'no'.");

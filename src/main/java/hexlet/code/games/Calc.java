@@ -5,11 +5,11 @@ import hexlet.code.Utils;
 
 public class Calc {
     public static void playCalcGame() {
-        String[] questionsAndAnswers = new String[Engine.QUESTIONS_AND_ANSWERS_COUNT];
+        String[][] questionsAndAnswers = new String[Engine.ROUND_COUNT][2];
         final int cycleStep = 2;
         for (int i = 0; i < questionsAndAnswers.length; i += cycleStep) {
-            questionsAndAnswers[i] = makeQuestion();
-            questionsAndAnswers[i + 1] = makeCorrectAnswer(questionsAndAnswers[i]);
+            questionsAndAnswers[i][0] = makeQuestion();
+            questionsAndAnswers[i][1] = makeCorrectAnswer(questionsAndAnswers[i][0]);
         }
 
         Engine.playGame(questionsAndAnswers, "What is the result of the expression?");
