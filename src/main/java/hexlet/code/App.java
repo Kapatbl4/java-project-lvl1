@@ -23,8 +23,7 @@ public class App {
         String choice = scanner.nextLine();
         switch (choice) {
             case ("1") :
-                System.out.println("Welcome to the Brain Games!");
-                Cli.askName();
+                Cli.sayHello();
                 break;
 
             case ("2") :

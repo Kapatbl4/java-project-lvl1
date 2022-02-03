@@ -12,17 +12,10 @@ public class Engine {
         return a * b;
     }
 
-    public static void greeting() {
-        System.out.println("Welcome to the Brain Games!");
-    }
-
     public static void playGame(String[] questionsAndAnswers, String instruction) {
         String answer;
-        greeting();
-        Cli.askName();
+        Cli.sayHello();
         System.out.println(instruction);
-        int trueAnswersCount = 0;
-        final int win = 3;
         int aIndex = 1;
         final int step = 2;
         for (int i = 0; i < questionsAndAnswers.length; i += step) {
@@ -33,7 +26,6 @@ public class Engine {
             if (answer.equals(questionsAndAnswers[aIndex])) {
                 System.out.println("Correct!");
                 aIndex += step;
-                trueAnswersCount++;
             } else {
                 System.out.println("'"
                         + answer
@@ -43,12 +35,10 @@ public class Engine {
                         + "Let's try again, "
                         + Cli.getName()
                         + "!");
-                break;
+                return;
             }
         }
-        if (trueAnswersCount == win) {
-            System.out.println("Congratulations, " + Cli.getName() + "!");
-        }
+        System.out.println("Congratulations, " + Cli.getName() + "!");
     }
 }
 

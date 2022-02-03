@@ -3,7 +3,8 @@ import java.util.Scanner;
 
 public class Cli {
     private static StringBuilder staticName = new StringBuilder();
-    public static void askName() {
+    public static void sayHello() {
+        System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
         Scanner scanner = new Scanner(System.in);
         String userName = scanner.nextLine();
