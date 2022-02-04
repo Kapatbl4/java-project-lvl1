@@ -6,8 +6,7 @@ import hexlet.code.Utils;
 public class Calc {
     public static void playCalcGame() {
         String[][] questionsAndAnswers = new String[Engine.ROUND_COUNT][2];
-        final int cycleStep = 2;
-        for (int i = 0; i < questionsAndAnswers.length; i += cycleStep) {
+        for (int i = 0; i < questionsAndAnswers.length; i++) {
             questionsAndAnswers[i][0] = makeQuestion();
             questionsAndAnswers[i][1] = makeCorrectAnswer(questionsAndAnswers[i][0]);
         }
