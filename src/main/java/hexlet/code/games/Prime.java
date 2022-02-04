@@ -19,7 +19,7 @@ public class Prime {
     public static String makeCorrectAnswer() {
         int q = getQuestion();
         final int firstNotPrimeNumber = 4;
-        if (q == 0) {
+        if (q == 0 || q == 1) {
             return "no";
         }
         if (q < firstNotPrimeNumber) {
