@@ -4,8 +4,9 @@ run-dist: # run
 	build/install/app/bin/app
 check-updates: #check updates
 	./gradlew dependencyUpdates
-lint: #checkstyle
+lint: # checkstyle
 	./gradlew checkstyleMain
-build: #build
+build: # build
 	./gradlew clean build
+.PHONY : build
 
