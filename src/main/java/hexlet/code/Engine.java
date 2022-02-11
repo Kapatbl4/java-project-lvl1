@@ -6,7 +6,6 @@ public class Engine {
     public static final int ROUND_COUNT = 3;
 
     public static void playGame(String[][] questionsAndAnswers, String instruction) {
-        String answer;
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
         Scanner scanner = new Scanner(System.in);
@@ -18,8 +17,7 @@ public class Engine {
         for (int i = 0; i < questionsAndAnswers.length; i++) {
             System.out.println("Question: " + questionsAndAnswers[i][0]);
             System.out.println("Your answer: ");
-            Scanner scanner1 = new Scanner(System.in);
-            answer = scanner1.nextLine();
+            String answer = scanner.nextLine();
             if (answer.equals(questionsAndAnswers[i][1])) {
                 System.out.println("Correct!");
             } else {
