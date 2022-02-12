@@ -9,3 +9,6 @@ build
 
 # Ignore "Hello, world!"
 App.java.save
+
+# Ignore Makefile.save
+Makefile.save
