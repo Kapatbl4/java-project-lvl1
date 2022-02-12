@@ -10,21 +10,20 @@ public class Engine {
         System.out.print("May I have your name? ");
         Scanner scanner = new Scanner(System.in);
         String userName = scanner.nextLine();
-        System.out.println();
-        System.out.println("Hello, " + userName + "!");
+        System.out.println("\nHello, " + userName + "!");
         System.out.println(instruction);
 
-        for (int i = 0; i < questionsAndAnswers.length; i++) {
-            System.out.println("Question: " + questionsAndAnswers[i][0]);
+        for (String[] questionsAndAnswer : questionsAndAnswers) {
+            System.out.println("Question: " + questionsAndAnswer[0]);
             System.out.println("Your answer: ");
             String answer = scanner.nextLine();
-            if (answer.equals(questionsAndAnswers[i][1])) {
+            if (answer.equals(questionsAndAnswer[1])) {
                 System.out.println("Correct!");
             } else {
                 System.out.println("'"
                         + answer
                         + "' is wrong answer;(. Correct answer was '"
-                        + questionsAndAnswers[i][1]
+                        + questionsAndAnswer[1]
                         + "'.\n"
                         + "Let's try again, "
                         + userName

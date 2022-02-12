@@ -5,19 +5,18 @@ import hexlet.code.Utils;
 
 
 public class Prime {
-    private static int question;
     public static void playPrime() {
         String[][] questionsAndAnswers = new String[Engine.ROUND_COUNT][2];
         for (int i = 0; i < questionsAndAnswers.length; i++) {
-            questionsAndAnswers[i][0] = makeQuestion();
-            questionsAndAnswers[i][1] = makeCorrectAnswer();
+            int result = Utils.makeNumber();
+            questionsAndAnswers[i][0] = makeQuestion(result);
+            questionsAndAnswers[i][1] = makeCorrectAnswer(result);
         }
 
         Engine.playGame(questionsAndAnswers, "Answer 'yes' if given number is prime. Otherwise answer 'no'.");
     }
 
-    public static String makeCorrectAnswer() {
-        int q = getQuestion();
+    public static String makeCorrectAnswer(int q) {
         final int firstNotPrimeNumber = 4;
         if (q == 0 || q == 1) {
             return "no";
@@ -36,18 +35,8 @@ public class Prime {
         return "yes";
     }
 
-    public static String makeQuestion() {
-        int result = Utils.makeNumber();
-        setQuestion(result);
+    public static String makeQuestion(int result) {
         return String.valueOf(result);
-    }
-
-    public static int getQuestion() {
-        return question;
-    }
-
-    public static void setQuestion(int q) {
-        Prime.question = q;
     }
 
 }

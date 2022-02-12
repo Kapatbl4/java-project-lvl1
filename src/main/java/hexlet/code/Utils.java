@@ -7,4 +7,9 @@ public class Utils {
         int b = (int) (Math.random() * tenForRandom);
         return a * b;
     }
+
+    public static int makeFromOneToTen() {
+        final int tenForRandom = 10;
+        return (int) (Math.random() * tenForRandom);
+    }
 }
