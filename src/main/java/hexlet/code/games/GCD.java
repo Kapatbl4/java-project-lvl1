@@ -15,21 +15,18 @@ public class GCD {
             if (num2 == 0) {
                 num2 = 1;
             }
-            questionsAndAnswers[i][0] = makeQuestion(num1, num2);
-            questionsAndAnswers[i][1] = makeCorrectAnswer(num1, num2);
+            questionsAndAnswers[i][0] = num1 + " " + num2;
+            questionsAndAnswers[i][1] = findGcd(num1, num2);
         }
 
         Engine.playGame(questionsAndAnswers, "Find the greatest common divisor of given numbers.");
     }
-    public static String makeCorrectAnswer(int number1, int number2) {
+    public static String findGcd(int number1, int number2) {
         while (number2 != 0) {
             int tmp = number1 % number2;
             number1 = number2;
             number2 = tmp;
         }
         return String.valueOf(number1);
-    }
-    public static String makeQuestion(int num1, int num2) {
-        return num1 + " " + num2;
     }
 }

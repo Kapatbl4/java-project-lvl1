@@ -4,31 +4,25 @@ import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 public class Progression {
+    static final int MIN_LENGTH = 5;
+    static final int MAX_LENGTH = 15;
+    static final int MAX_STEP = 10;
     public static void playProgression() {
         String[][] questionsAndAnswers = new String[Engine.ROUND_COUNT][2];
         for (int i = 0; i < questionsAndAnswers.length; i++) {
             int beginning = Utils.makeNumber();
-            final int minLength = 5;
-            final int maxLength = 15;
-            final int midLength = 10;
-            int sequenceLength = Utils.makeNumber();
-            if (sequenceLength < minLength || sequenceLength > maxLength) {
-                sequenceLength = midLength;
-            }
+            int sequenceLength = Utils.makeNumber(MIN_LENGTH, MAX_LENGTH);
             int[] numbers = new int[sequenceLength];
-            int step = Utils.makeFromOneToTen() + 1;
+            int step = Utils.makeNumber(1, MAX_STEP);
             numbers[0] = beginning;
             for (int j = 1; j < numbers.length; j++) {
                 numbers[j] = numbers[j - 1] + step;
             }
 
-            int hiddenNumberPosition = Math.abs(numbers.length - Utils.makeFromOneToTen());
-            if (hiddenNumberPosition == numbers.length) {
-                hiddenNumberPosition--;
-            }
+            int hiddenNumberPosition = Utils.makeNumber(0, numbers.length - 1);
 
             questionsAndAnswers[i][0] = makeQuestion(numbers, hiddenNumberPosition);
-            questionsAndAnswers[i][1] = makeCorrectAnswer(numbers, hiddenNumberPosition);
+            questionsAndAnswers[i][1] = String.valueOf(numbers[hiddenNumberPosition]);
         }
 
         Engine.playGame(questionsAndAnswers, "What number is missing in the progression?");
@@ -52,7 +46,4 @@ public class Progression {
         return String.valueOf(sb);
     }
 
-    public static String makeCorrectAnswer(int[] numbers, int hiddenNumberPosition) {
-        return String.valueOf(numbers[hiddenNumberPosition]);
-    }
 }

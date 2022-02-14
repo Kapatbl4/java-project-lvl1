@@ -6,44 +6,34 @@ import hexlet.code.Utils;
 public class Calc {
     public static void playCalcGame() {
         String[][] questionsAndAnswers = new String[Engine.ROUND_COUNT][2];
-        for (int i = 0; i < questionsAndAnswers.length; i++) {
-            final int plus = 10;
-            final int minus = 20;
-            char sign;
-            int s = Utils.makeNumber();
-            if (s < plus) {
-                sign = '+';
-            } else if (s < minus) {
-                sign = '-';
-            } else {
-                sign = '*';
-            }
+        String[] signs = new String[]{"+", "-", "*"};
 
+        for (int i = 0; i < questionsAndAnswers.length; i++) {
+            String sign = signs[Utils.makeNumber(signs.length - 1)];
             int first = Utils.makeNumber();
             int second = Utils.makeNumber();
 
-            questionsAndAnswers[i][0] = makeQuestion(first, second, sign);
-            questionsAndAnswers[i][1] = makeCorrectAnswer(first, second, sign);
+            questionsAndAnswers[i][0] = first + " " + sign + " " + second;
+            questionsAndAnswers[i][1] = calculate(first, second, sign);
         }
 
         Engine.playGame(questionsAndAnswers, "What is the result of the expression?");
     }
 
-    public static String makeCorrectAnswer(int first, int second, char sign) {
+    public static String calculate(int first, int second, String sign) {
         int result;
         switch (sign) {
-            case ('+') :
+            case ("+") :
                 result = first + second;
                 break;
-            case ('-') :
+            case ("-") :
                 result = first - second;
                 break;
-            default: result = first * second;
+            case ("*") :
+                result = first * second;
+                break;
+            default: throw  new RuntimeException("Unsupported operation");
         }
         return String.valueOf(result);
-    }
-
-    public static String makeQuestion(int first, int second, char sign) {
-        return first + " " + sign + " " + second;
     }
 }
