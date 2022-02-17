@@ -9,12 +9,7 @@ public class GCD {
         for (int i = 0; i < questionsAndAnswers.length; i++) {
             int num1 = Utils.makeNumber();
             int num2 = Utils.makeNumber();
-            if (num1 == 0) {
-                num1 = 1;
-            }
-            if (num2 == 0) {
-                num2 = 1;
-            }
+
             questionsAndAnswers[i][0] = num1 + " " + num2;
             questionsAndAnswers[i][1] = findGcd(num1, num2);
         }

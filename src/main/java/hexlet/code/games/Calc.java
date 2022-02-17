@@ -4,12 +4,12 @@ import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 public class Calc {
+    static final String[] SIGNS = new String[]{"+", "-", "*"};
     public static void playCalcGame() {
         String[][] questionsAndAnswers = new String[Engine.ROUND_COUNT][2];
-        String[] signs = new String[]{"+", "-", "*"};
 
         for (int i = 0; i < questionsAndAnswers.length; i++) {
-            String sign = signs[Utils.makeNumber(signs.length - 1)];
+            String sign = SIGNS[Utils.makeNumber(SIGNS.length - 1)];
             int first = Utils.makeNumber();
             int second = Utils.makeNumber();
 

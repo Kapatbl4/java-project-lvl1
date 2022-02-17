@@ -12,12 +12,9 @@ public class Progression {
         for (int i = 0; i < questionsAndAnswers.length; i++) {
             int beginning = Utils.makeNumber();
             int sequenceLength = Utils.makeNumber(MIN_LENGTH, MAX_LENGTH);
-            int[] numbers = new int[sequenceLength];
             int step = Utils.makeNumber(1, MAX_STEP);
-            numbers[0] = beginning;
-            for (int j = 1; j < numbers.length; j++) {
-                numbers[j] = numbers[j - 1] + step;
-            }
+
+            int[] numbers = makeProgression(beginning, sequenceLength, step);
 
             int hiddenNumberPosition = Utils.makeNumber(0, numbers.length - 1);
 
@@ -26,6 +23,15 @@ public class Progression {
         }
 
         Engine.playGame(questionsAndAnswers, "What number is missing in the progression?");
+    }
+
+    public static int[] makeProgression(int beginning, int progressionLength, int step) {
+        int[] numbers = new int[progressionLength];
+        numbers[0] = beginning;
+        for (int j = 1; j < numbers.length; j++) {
+            numbers[j] = numbers[j - 1] + step;
+        }
+        return numbers;
     }
 
 
